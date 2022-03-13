@@ -1,4 +1,4 @@
-module server
+module github.com/apelico/ReactGo-project
 
 go 1.17
 
