@@ -2,7 +2,7 @@ package router
 
 import (
 	"net/http"
-	"server/middleware"
+	"server/server/middleware"
 )
 
 func Router() *http.ServeMux {

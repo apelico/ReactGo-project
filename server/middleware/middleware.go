@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"server/models"
+	"server/server/models"
 
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
