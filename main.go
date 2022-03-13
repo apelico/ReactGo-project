@@ -8,10 +8,6 @@ import (
 	"server/server/router"
 )
 
-const (
-	Port = ":5000"
-)
-
 func main() {
 	port := os.Getenv("PORT")
 	defaultPort := "8080"
