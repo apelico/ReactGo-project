@@ -15,7 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "go run main.go",
+    "live": "react-scripts start",
     "build": "react-scripts build",
     "server": "nodemon --exec go run main.go --signal",
     "test": "react-scripts test",
