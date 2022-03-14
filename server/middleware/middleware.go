@@ -103,3 +103,18 @@ func UpdateTodo(w http.ResponseWriter, r *http.Request) {
 
 	DB.UpdateOne(context.TODO(), bson.M{"id": data.Id}, bson.D{{"$set", data}})
 }
+
+func DeleteTodo(w http.ResponseWriter, r *http.Request) {
+	body, err := io.ReadAll(r.Body)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	var data models.Todo
+	json.Unmarshal([]byte(body), &data)
+
+	fmt.Printf("Delete")
+
+	DB.DeleteOne(context.TODO(), bson.M{"id": data.Id})
+}

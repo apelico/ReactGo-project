@@ -60,6 +60,23 @@ function App() {
     setTodos(newTodos)
   }
 
+  function deleteTodo(id){
+    const newTodos = [...todos]
+    const todo = newTodos.find(todo => todo.id === id)
+
+    console.log("Delte")
+
+    fetch('/api/deleteTodo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(todo),
+    })
+
+    newTodos.pop(todo)
+
+    setTodos(newTodos)
+  }
+
   function handleClearTodos() {
     const newTodos = todos.filter(todo => !todo.status)
     setTodos(newTodos)
@@ -68,7 +85,7 @@ function App() {
   return (
     <>
     <div>Testing stuff 2020</div>
-    <TodoList todos={todos} toggleTodo={toggleTodo} />
+    <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     <input ref={todoNameRef} type='text' />
     <button onClick={handleAddTodo}>Add Todo</button>
     <button onClick={handleClearTodos}>Remove Todos</button>
