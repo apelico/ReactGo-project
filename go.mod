@@ -1,6 +1,8 @@
-module github.com/apelico/ReactGo-project
+module server
 
 go 1.17
+
+// +heroku goVersion go1.17
 
 require go.mongodb.org/mongo-driver v1.8.4
 

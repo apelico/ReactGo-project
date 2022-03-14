@@ -28,7 +28,7 @@ func goDotEnvVariable(key string) string {
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fatalf("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 
 	return os.Getenv(key)
@@ -61,6 +61,8 @@ func ConnectDB() {
 }
 
 func AddTodo(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 	body, err := io.ReadAll(r.Body)
 

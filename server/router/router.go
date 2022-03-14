@@ -8,8 +8,7 @@ import (
 func Router() *http.ServeMux {
 	mux := http.NewServeMux()
 
-	fileServer := http.FileServer(http.Dir("./build"))
-	mux.Handle("/", fileServer)
+	mux.Handle("/", http.FileServer(http.Dir("./build")))
 
 	mux.HandleFunc("/api/addTodo", middleware.AddTodo)
 	mux.HandleFunc("/api/getTodoList", middleware.GetTodoList)
