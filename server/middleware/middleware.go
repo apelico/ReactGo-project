@@ -114,7 +114,5 @@ func DeleteTodo(w http.ResponseWriter, r *http.Request) {
 	var data models.Todo
 	json.Unmarshal([]byte(body), &data)
 
-	fmt.Printf("Delete")
-
 	DB.DeleteOne(context.TODO(), bson.M{"id": data.Id})
 }

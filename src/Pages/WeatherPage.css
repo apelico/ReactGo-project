@@ -1,0 +1,43 @@
+.temperature{
+    display: inline-block;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 5px;
+    width: 200px;
+    height:260px;
+    margin: 5px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.temperature .day{
+    font-size: 30px;
+}
+
+.temperature .currentTemperature{
+    font-size: 62px;
+    margin: 0;
+    padding: 0;
+}
+
+.temperature .weatherDescription{
+    font-size: 30px;
+}
+
+.temperature .weatherFeelsLike{
+    font-size: 20px;
+}
+
+.temperature .weatherExtra{
+    font-size: 16px;
+}
+
+.row {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.column {
+    flex: 50%;
+}
